@@ -4,7 +4,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/demodb?characterEncoding=utf8
     driverClassName: com.mysql.jdbc.Driver
     username: root
-    password: 12345678
+    password: 123456
     #配置监控统计拦截的filters， 去掉后监控界面sql将无法统计，'wall'用于防火墙
     filters: stat, wall, log4j
     #最大活跃数
@@ -32,11 +32,11 @@ spring:
       format_sql: true
       hibernate:
         naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
-#  http:
-#    encoding:
-#      charset: UTF-8
-#      force: true
-#      enabled: true
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
   mvc:
     view:
       prefix: /WEB-INF/jsp/
@@ -44,3 +44,16 @@ spring:
   thymeleaf:
     cache: false
     enabled: false
+
+  # JavaMailSender 邮件发送的配置
+  mail:
+    host: smtp.qq.com
+    username: 838197181@qq.com
+    password: qidscctepwcfbajj
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
