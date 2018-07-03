@@ -1,19 +1,20 @@
-package com.example.demo;
+package com.example.demo.configuration;
 
+import com.example.demo.Interceptor.LoggerInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @Author: haitian
- * @Date: 2018/7/1 下午9:23
+ * @Author: NovaStar.tech
  * @Description:
+ * @Date: 20:54 2018/7/3
  */
 @Configuration
-public class SessionConfiguration implements WebMvcConfigurer {
+public class LoggerConfiguration implements WebMvcConfigurer{
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new LoggerInterceptor()).addPathPatterns("/**");
     }
 }

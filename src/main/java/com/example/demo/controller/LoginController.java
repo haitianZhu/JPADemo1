@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.example.demo.Interceptor.LoggerInterceptor;
 import com.example.demo.entity.UserEntity;
 import com.example.demo.jpa.UserJPA;
 
@@ -46,6 +48,12 @@ public class LoginController {
             // 将用户写入session
             request.getSession().setAttribute("_session_user", userEntity);
         }
+
+        // 测试拦截器记录日志功能
+//        JSONObject object = new JSONObject();
+//        object.put("msg", "用户登录接口，这是一条测试日志");
+//        // 将返回值写入到请求对象中
+//        request.setAttribute(LoggerInterceptor.LOGGER_RETURN, object);
 
         return result;
     }
