@@ -84,15 +84,22 @@ public class LoggerInterceptor implements HandlerInterceptor {
         int status = response.getStatus();
         long currentTime = System.currentTimeMillis();
         long time = Long.valueOf(request.getAttribute(LOGGER_SEND_TIME).toString());
+
+        // 记录本次日志实体
         LoggerEntity loggerEntity = (LoggerEntity) request.getAttribute(LOGGER_ENTITY);
+        // 设置请求时间差
         loggerEntity.setTimeConsuming(Integer.valueOf((currentTime - time) + ""));
+        // 设置返回时间
         loggerEntity.setReturnTime(currentTime + "");
+        // 设置返回错误码
         loggerEntity.setHttpStatusCode(status + "");
+        // 设置返回值
         loggerEntity.setReturnData(JSON.toJSONString(request.getAttribute(LOGGER_RETURN), SerializerFeature
                 .DisableCircularReferenceDetect, SerializerFeature.WriteMapNullValue));
 
-//        LoggerJPA loggerJPA = getDAO(LoggerJPA.class, request);
-//        loggerJPA.save(loggerEntity);
+        // 将日志写入数据库
+        LoggerJPA loggerJPA = getDAO(LoggerJPA.class, request);
+        loggerJPA.save(loggerEntity);
 
     }
 
