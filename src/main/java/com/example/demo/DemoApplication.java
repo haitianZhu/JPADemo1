@@ -5,6 +5,7 @@ import com.example.demo.service.MailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,7 @@ import java.util.Date;
 
 @RestController
 @SpringBootApplication
+@ServletComponentScan
 public class DemoApplication {
 
     @Autowired
@@ -37,6 +39,6 @@ public class DemoApplication {
 
 //        mailSenderService.sendInlineMail("nova_zhuht@126.com", "测试标题：带静态资源的邮件");
 
-        mailSenderService.sendTemplateMail("nova_zhuht@126.com", "测试标题:模板邮件");
+//        mailSenderService.sendTemplateMail("nova_zhuht@126.com", "测试标题:模板邮件");
     }
 }
