@@ -11,3 +11,4 @@ SpringBoot+SpringDataJPA learning demo
 9.自动装配Servlet；
 10.实现单个、多个文件的上传；
 11.SpringBoot配置logback；
+12.SpringDataJPA整合QueryDSL；
