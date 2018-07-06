@@ -9,3 +9,4 @@ SpringBoot+SpringDataJPA learning demo
 7.使用邮件服务；
 8.SpringBoot静态资源处理，包括默认映射路径及优先级，自定义资源映射，在application.yml中配置等；
 9.自动装配Servlet；
+10.实现单个、多个文件的上传；
