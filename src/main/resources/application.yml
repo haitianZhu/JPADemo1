@@ -64,3 +64,7 @@ spring:
           starttls:
             enable: true
             required: true
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 2048MB
