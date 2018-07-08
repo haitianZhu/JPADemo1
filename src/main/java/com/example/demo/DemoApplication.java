@@ -6,14 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.cache.RedisCacheConfiguration;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.RedisSerializationContext;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Date;
 
 @RestController
 @SpringBootApplication
 @ServletComponentScan
+/**
+ * 注解配置启用缓存,自动配置配置文件的配置信息进行条件注入,缓存所需实例
+ */
+@EnableCaching
 public class DemoApplication {
 
     @Autowired
@@ -41,4 +49,6 @@ public class DemoApplication {
 
 //        mailSenderService.sendTemplateMail("nova_zhuht@126.com", "测试标题:模板邮件");
     }
+
+
 }
