@@ -13,3 +13,4 @@ SpringBoot+SpringDataJPA learning demo
 11.SpringBoot配置logback；
 12.SpringDataJPA整合QueryDSL；
 13.参数后台数据校验（SpringBoot默认validator数据校验、自定义数据校验）
+14.使用redis（注解方式，非常方便）
