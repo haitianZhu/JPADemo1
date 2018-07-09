@@ -28,13 +28,13 @@ public class LoginController {
         String result = "登陆成功";
 
         //根据用户名查询用户是否存在
-        UserEntity userEntity = userJPA.findUserEntityByNameAndPwd(user.getName(), user.getPwd());
+        UserEntity userEntity = userJPA.findUserEntityByUsernameAndPassword(user.getUsername(), user.getPassword());
 
         if (userEntity == null) {
             // 用户不存在
             loginRet = false;
             result = "用户不存在，登陆失败";
-        } else if (!userEntity.getPwd().equals(user.getPwd())) {
+        } else if (!userEntity.getPassword().equals(user.getPassword())) {
             // 密码错误
             loginRet = false;
             result = "用户密码不相符，登陆失败";

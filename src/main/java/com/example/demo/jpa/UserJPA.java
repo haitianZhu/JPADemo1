@@ -3,12 +3,9 @@ package com.example.demo.jpa;
 import com.example.demo.base.BaseRepository;
 import com.example.demo.entity.UserEntity;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -19,9 +16,11 @@ import java.util.List;
 @Transactional
 public interface UserJPA extends BaseRepository<UserEntity, Long> {
 
-    @Query(value = "select * from t_user where t_age > ?1", nativeQuery = true)
+    @Query(value = "select * from t_user where age > ?1", nativeQuery = true)
     List<UserEntity> nativeQuery(int age);
 
-    UserEntity findUserEntityByNameAndPwd(String name, String pwd);
+    UserEntity findUserEntityByUsernameAndPassword(String username, String password);
+
+    UserEntity findUserEntityByUsername(String username);
 
 }
