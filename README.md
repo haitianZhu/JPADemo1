@@ -14,3 +14,4 @@
 12.SpringDataJPA整合QueryDSL<br>
 13.参数后台数据校验（SpringBoot默认validator数据校验、自定义数据校验）<br>
 14.使用redis（注解方式，非常方便）<br>
+15.使用SpringSecurity完成认证、授权<br>
