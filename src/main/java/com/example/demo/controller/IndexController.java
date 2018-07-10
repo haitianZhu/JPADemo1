@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @Description:
  */
 @Controller
-@RequestMapping("/user")
 public class IndexController {
 
     // logback
@@ -31,5 +30,21 @@ public class IndexController {
         logger.error("访问index方法-error");
 
         return "index";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+
+        logger.info("访问login方法-info");
+
+        return "login";
+    }
+
+    @RequestMapping(value = "/main", method = RequestMethod.GET)
+    public String main() {
+
+        logger.info("访问main方法-info");
+
+        return "main";
     }
 }

@@ -52,5 +52,4 @@ public class RoleEntity implements Serializable {
     public void setFlag(String flag) {
         this.flag = flag;
     }
-    
 }
